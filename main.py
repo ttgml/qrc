@@ -53,13 +53,14 @@ async def get_root( user_agent: str = Header(None)):
             "/help": "display this help",
             "/version": "output version information",
             "/debug": "echo some info",
+            "/docs": "Swagger Docs",
             "/": "curl -F 'file=@demo.py' " + config.get('base','url')
         }
     }
 
 @app.get("/debug")
 def echo_ua(user_agent: str = Header("unknown")):
-    return {"ua":user_agent} 
+    return {"User-Agent":user_agent} 
 
 @app.get("/version")
 def echo_version():

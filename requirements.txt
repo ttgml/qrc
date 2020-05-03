@@ -3,3 +3,4 @@ python-multipart
 redis
 aiofiles
 uvicorn
+qrcode_terminal
