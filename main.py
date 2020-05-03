@@ -9,6 +9,7 @@ from typing import List
 from configparser import ConfigParser
 from pathlib import Path
 import hashlib
+
 config = ConfigParser()
 config.read('setting.cfg')
 
@@ -43,6 +44,7 @@ async def post_file( user_agent: str = Header(None), file: UploadFile = File(Non
         return {"msg":"ohh my god"}
     else:
         return {"are you ok"}
+
 @app.get("/")
 async def get_root( user_agent: str = Header(None)):
     return {
@@ -65,9 +67,6 @@ def echo_version():
 
 @app.get('/{fuid}/info')
 def get_info_by_uuid(fuid: str = None):
-    '''
-    输出文件的信息，以及下载连接，这个页面可以预览文本文件
-    '''
     p = upload_path.joinpath(fuid)
     if (not p.exists()) or (not redis.exists(fuid)):
         raise HTTPException(404)
