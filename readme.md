@@ -23,7 +23,7 @@
 docker build -t qrc:v1 .
 
 3. docker run
-docker run -d -v /tmp/upload:/tmp/upload -p 8080:80 qcr:v1
+docker run -d -v /tmp/upload:/tmp/upload -p 8080:80 qrc:v1
 
 ### Uvicorn
 
