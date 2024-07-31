@@ -10,7 +10,7 @@
     curl http://server/{fuid}/down
 
 ### Delete File
-    curl http://server/{fuid}/down
+    curl http://server/{fuid}/delete
 
 ## Deploy
 
